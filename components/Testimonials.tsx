@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 
 export default function Testimonials() {
@@ -27,10 +28,11 @@ export default function Testimonials() {
       </p>
     </div>
 
-    {/* Testimonials Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+    {/* Testimonials Marquee */}
+    <div className="relative mb-12">
+      <div className="flex animate-marquee gap-8 hover:pause-marquee">
       {/* Testimonial 1 */}
-      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden">
+      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden flex-shrink-0 w-96">
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-transparent rounded-full filter blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
         
         <div className="relative z-10">
@@ -65,7 +67,7 @@ export default function Testimonials() {
       </div>
 
       {/* Testimonial 2 */}
-      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden lg:translate-y-8">
+      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden flex-shrink-0 w-96">
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-transparent rounded-full filter blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
         
         <div className="relative z-10">
@@ -100,7 +102,7 @@ export default function Testimonials() {
       </div>
 
       {/* Testimonial 3 */}
-      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden">
+      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden flex-shrink-0 w-96">
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-transparent rounded-full filter blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
         
         <div className="relative z-10">
@@ -135,7 +137,7 @@ export default function Testimonials() {
       </div>
 
       {/* Testimonial 4 */}
-      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden md:col-span-2 lg:col-span-1">
+      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden flex-shrink-0 w-96">
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-transparent rounded-full filter blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
         
         <div className="relative z-10">
@@ -170,7 +172,7 @@ export default function Testimonials() {
       </div>
 
       {/* Testimonial 5 - Featured */}
-      <div className="group bg-gradient-to-br from-amber-600 to-amber-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden md:col-span-2 lg:translate-y-8">
+      <div className="group bg-gradient-to-br from-amber-600 to-amber-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex-shrink-0 w-96">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full filter blur-3xl opacity-10"></div>
         
         <div className="relative z-10">
@@ -203,6 +205,113 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+
+      {/* Duplicate testimonials for seamless loop */}
+      {/* Testimonial 1 - Duplicate */}
+      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden flex-shrink-0 w-96">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-transparent rounded-full filter blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+        
+        <div className="relative z-10">
+          <div className="flex items-center gap-0.5 text-amber-500 mb-6">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+            ))}
+          </div>
+
+          <p className="text-stone-700 leading-relaxed mb-6 italic">
+            "The 7-course tasting menu was nothing short of extraordinary. Each dish told a story—the seared scallops with truffle foam was so delicate it melted on my tongue. We celebrated our 25th anniversary here, and the sommelier paired a 2015 Burgundy that elevated the entire experience. Worth every moment of the two-month wait for our reservation."
+          </p>
+
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <Image 
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces" 
+                width={56} 
+                height={56} 
+                alt="Margaret Chen"
+                className="rounded-full object-cover ring-2 ring-amber-100"
+              />
+            </div>
+            <div>
+              <p className="font-semibold text-stone-900">Margaret Chen</p>
+              <p className="text-sm text-stone-500">Anniversary Dinner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonial 2 - Duplicate */}
+      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden flex-shrink-0 w-96">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-transparent rounded-full filter blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+        
+        <div className="relative z-10">
+          <div className="flex items-center gap-0.5 text-amber-500 mb-6">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+            ))}
+          </div>
+
+          <p className="text-stone-700 leading-relaxed mb-6 italic">
+            "We hosted our corporate dinner for 18 in the private dining room, and it exceeded all expectations. The chef personally came out to explain his inspiration behind the seasonal menu. The braised short rib with bone marrow reduction had our CEO asking for the recipe. Professional service, impeccable timing between courses, and the ambiance sealed a $2M deal for us."
+          </p>
+
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <Image 
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=faces" 
+                width={56} 
+                height={56} 
+                alt="James Rodriguez"
+                className="rounded-full object-cover ring-2 ring-amber-100"
+              />
+            </div>
+            <div>
+              <p className="font-semibold text-stone-900">James Rodriguez</p>
+              <p className="text-sm text-stone-500">Private Event Host</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonial 3 - Duplicate */}
+      <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 relative overflow-hidden flex-shrink-0 w-96">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-transparent rounded-full filter blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+        
+        <div className="relative z-10">
+          <div className="flex items-center gap-0.5 text-amber-500 mb-6">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+            ))}
+          </div>
+
+          <p className="text-stone-700 leading-relaxed mb-6 italic">
+            "As a food critic who's dined at 3-Michelin-star restaurants across Europe, I was skeptical. But the duck confit with cherry gastrique was executed with such precision—the skin crackled perfectly, and the meat fell off the bone. The attention to plating details, from the edible flowers to the microgreens, shows a chef who truly respects the craft. I've returned four times in three months."
+          </p>
+
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <Image 
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces" 
+                width={56} 
+                height={56} 
+                alt="Sophia Beaumont"
+                className="rounded-full object-cover ring-2 ring-amber-100"
+              />
+            </div>
+            <div>
+              <p className="font-semibold text-stone-900">Sophia Beaumont</p>
+              <p className="text-sm text-stone-500">Food Critic & Columnist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
 
     {/* Bottom CTA */}
