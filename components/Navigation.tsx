@@ -29,10 +29,10 @@ export default function Navigation() {
           Home
           <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-amber-500 to-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
         </Link>
-        <a href="#menu" className="px-4 py-2 text-slate-300 hover:text-amber-500 font-medium text-sm transition-colors duration-200 relative group">
+        <Link href="/menu" className="px-4 py-2 text-slate-300 hover:text-amber-500 font-medium text-sm transition-colors duration-200 relative group">
           Menu
           <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-amber-500 to-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-        </a>
+        </Link>
         <a href="#contact" className="px-4 py-2 text-slate-300 hover:text-amber-500 font-medium text-sm transition-colors duration-200 relative group">
           Contact
           <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-amber-500 to-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
